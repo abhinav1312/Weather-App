@@ -59,7 +59,7 @@ app.post('/weather', async (req, res) => {
             mod.flag = 0;
         }
         res.redirect('/weather')
-    }catch (error) {console.log(error) }
+    }catch (error) {throw(error) }
 })
 
 app.get('*', (req, res)=>{
