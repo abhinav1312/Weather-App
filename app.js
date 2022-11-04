@@ -49,17 +49,20 @@ app.post('/weather', async (req, res) => {
     const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?units=metric&cnt=1&appid=${process.env.WEATHER_API_KEY}&q=${city}`;
     const imgUrl = `https://api.unsplash.com/photos/random/?orientation=portrait&count =1&content_filter=high&client_id=${process.env.IMAGE_API_KEY}&query=${city}`;
     try {
-        let weatherRes = await fetch(weatherUrl).then(res => res.json())
-        let imgRes = await fetch(imgUrl).then(res => res.json())
-        if (weatherRes.cod === '200') {
-            mod.flag = 1;
-            mod.pushObj(weatherRes, imgRes);
+        const result = await Promise.all([
+            fetch(weatherUrl).then(res => res.json()),
+            fetch(imgUrl).then(res => res.json())
+        ])
+
+        if(result[0].cod ==='200'){
+            mod.flag=1;
+            mod.pushObj(result[0], result[1]);
         }
-        else {
+        else{
             mod.flag = 0;
         }
         res.redirect('/weather')
-    }catch (error) {throw(error) }
+    }catch(error) {console.log(error) }
 })
 
 app.get('*', (req, res)=>{
