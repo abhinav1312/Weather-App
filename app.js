@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const fetch = require('node-fetch');
 const path = require('path')
 const app = express();
-const port = process.env.port || 80;
+const port = process.env.port || 3000;
 require('dotenv').config()
 
 
