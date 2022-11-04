@@ -1,0 +1,21 @@
+<%-include('partials/header.ejs');-%>
+  <main onload="loadFun()">
+
+    <section class="card-section" onscroll="scrollFun()">
+      <div class="card-group">
+        <div class="all-card"></div>
+        <div class="real-card"></div>
+        <div class="all-card"></div>
+        <div class="all-card"></div>
+      </div>
+    </section>
+
+    <section class="form-section">
+      <form action="/weather" class="form" method="post">
+        <input type="text" name="cityChoice" id="cityChoice" placeholder="Enter choice of city" autocomplete="off">
+        <input type="submit" id="btn" value="Search">
+      </form>
+    </section>
+
+  </main>
+<%-include('partials/footer.ejs');-%>
