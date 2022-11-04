@@ -214,11 +214,11 @@ Hero section right
     0%{transform: translate(0%)}
     33%{transform: translate(-0%)}
     
-    33%{transform: translate(-33%)}
-    66%{transform: translate(-33%)}
+    33%{transform: translate(-100%)}
+    66%{transform: translate(-100%)}
     
-    66%{transform: translate(-66%)}
-    100%{transform: translate(-66%)}
+    66%{transform: translate(-200%)}
+    100%{transform: translate(-200%)}
     100%{transform: translate(0%)}
     
 }
