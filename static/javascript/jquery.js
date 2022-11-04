@@ -3,10 +3,7 @@ jQuery(function () {
     $(".loader").hide();
 
     //GET WEATHER DATA FROM SERVER ON REFRESH/LOAD
-    window.onload = function(){
-        $(".loader").show();
-        getReq();
-    }
+   getReq();
 
     //DATES
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec"];
